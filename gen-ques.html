@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-" content="IE=edge">
+    <meta http-equiv="Cache-control" content="public">
+    <meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A! Pataas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
+    <link rel="icon" type="image/x-icon" href="https://github.com/neohandsome/gittest/blob/img/logo.png?raw=true">
+    <style>
+        
+        body {
+            text-align: center;
+            background: url("https://github.com/neohandsome/gittest/blob/img/ezgif.com-optimize.gif?raw=true") no-repeat;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        #title {
+            position: relative;
+            width: 17lh;
+            align-items: center;
+            justify-content: center;
+        }
+        .quiz-box {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            width: 550px;
+            background: #fff;
+            border-radius: 5px;
+        }
+        .quiz-box header {
+            position: relative;
+            z-index: 99;
+            height: 70px;
+            padding: 0 30px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 5px 5px 0 0;
+            box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+        }
+        .quiz-box header .quiz-title {
+             font-size: 20px;
+             font-weight: 600;
+
+        }
+        .quiz-box header .timer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 145px;
+            height: 45px;
+            background: #cce5ff;
+            border: 1px solid #b8daff;
+            border-radius: 5px;
+            padding: 0 8px;
+        }
+
+        .quiz-box header .timer .time-text {
+            font-weight: 400;
+            font-size: 17px;
+            user-select: none;
+        }
+        .quiz-box header .timer .timer-sec {
+             font-size: 18px;
+             font-weight: 500;
+             background: #343a40;
+             height: 30px;
+             width: 45px;
+             color: #fff;
+             text-align: center;
+             line-height: 30px;
+             border-radius: 5px;
+             border: 1px solid #343a40;
+             user-select: none;
+        }
+        .quiz-box section {
+            padding: 25px 30px 20px 30px ;
+            background: #fff;
+        }
+        .quiz-box section .que-text {
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .quiz-box section .option-list {
+            padding: 20px 0;
+            display: block;
+        }
+        section .option-list .option {
+            background: aliceblue;
+            border: 3px solid #84c5fe;
+            border-radius: 5px;
+            padding: 8px 15px;
+            margin-bottom: 15px;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        section .option-list .option:hover {
+            color: #004085;
+            background: #cce5ff;
+            border-color: #b8daff;
+
+        }
+        .option-list .option:last-child {
+            margin-bottom: 0px;
+        }
+        .option-list .option .icon {
+            height: 30px;
+            width: 20px;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 13px;
+            line-height: 24px;
+            pointer-events: none;
+        }
+        .option-list .option .icon.tick {
+            color: #239023;
+            border-color:#23903c;
+            background: #d4edda;
+        }
+        .quiz-box footer {
+            height: 60px;
+            width: 100%;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .quiz-box footer .total-que span {
+            display: flex;
+            user-select: none;
+        }
+        footer .total-que span p {
+            font-weight: 500;
+            padding: 0 5px;
+        }
+        .total-que span p:first-child {
+            padding-left: 0px;
+        }
+        footer .next-btn {
+            position: relative;
+            right: 9%;
+            bottom: 9%;
+            height: 40px;
+            padding: 0 13px;
+            font-size: 18px;
+            font-weight: 400;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: #007bff;
+            border-radius: 5px;
+            border: 1px solid #007bff;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        footer .next-btn:hover {
+            background: #0263ca;
+        }
+        .result-box {
+            background: #fff;
+            width: ;
+        }
+    </style> 
+</head>
+<body>
+
+    <div class="logo" onclick="window.location.href='index.html'">
+        <a href="index1.html">
+            <img id ="title" src="https://github.com/neohandsome/gittest/blob/img/A%20PATAAS%20TEXT1.png?raw=true"><br>
+        </a>    
+    </div>
+
+    <!-- Timer -->
+    <div class="quiz-box">
+        <header>
+            <div class="quiz-title">General Questions</div>
+            <div class="timer">
+                <div class="time-text">Time Left:</div>
+                <div class="timer-sec">15</div>
+            </div>
+        </header>
+        <section>
+            <!-- Question -->
+            <div class="que-text">
+                <span>What is the capital of France?</span>
+            </div> 
+            <div class="option-list">
+                <div class="option">
+                    <span>Manila</span>
+                    <div class="icon-cross"><i class="fas fa-times"></i></div>
+                </div>
+                <div class="option">
+                    <span>Seoul</span>
+                     <div class="icon-cross "><i class="fab fa-times"></i></div>
+                </div>   
+                <div class="option">
+                    <span>France</span>
+                    <div class="icon tick"><i class="fab fa-check"></i></div>
+                </div>   
+                <div class="option">
+                    <span>Beijing</span>
+                    <div class="icon-cross "><i class="fab fa-times"></i></div>
+                </div>   
+            </div>
+        </section>
+
+        <!-- Quiz box footer -->
+        <footer>
+            <div class="total-que">
+                <span><p>1</p>of<p>25</p>Questions</span>
+            </div>
+            <button class="next-btn">Next Que</button>
+        </footer>
+    </div>
+
+    <!-- Result Box -->
+    <div class="result-box">
+        <div class="icon">
+            <i class="fab fa-crown"></i>
+        </div>
+        <div class="complete-text">You've completed the Quiz!</div>
+        <div class="score-text">
+            <span>and sorry, You got only <p>2</p> out of <p>25</p></span>
+        </div>
+        <div class="button">
+            <button class="restart">Replay Quiz</button>
+            <button class="quit">Replay Quiz</button>
+        </div>
+    </div>
+
+    <script>
+        var choices = {
+            "question": "What is the capital of France?",
+            "answers": ["a. Manila", "b. Seoul", "c. Paris", "d. Beijing"],
+            "correct": "c"
+        };
+
+        var question = 0;
+
+        function handleAnswer(answer) {
+            if (answer === choices.correct) {
+                question++;
+            }
+            if (questoin < choices.length) {
+                showQuestion(question);
+            }
+        }
+    </script>
+</body>
+</html>
