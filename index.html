@@ -5,33 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A! Pataas</title>
+    <link rel="icon" type="image/x-icon" href="https://github.com/neohandsome/gittest/blob/img/logo.png?raw=true">
     <style>
-        .start_menu {
-            text-align: center;
+        body{
+          text-align: center;
+          background: url("https://github.com/neohandsome/gittest/blob/img/ezgif.com-optimize.gif?raw=true") no-repeat;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;  
         }
-        .dropbtn {
-            padding: 20px 35px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            border-radius: 15px;
+        #title{
+            position: relative;
+            width: 50lh;
+            margin-bottom: -150px;
+            animation: fade-down 0.5s;
         }
-        .dropbtn:hover {
-            transition: 0.5s;
-            background-color: #d4d4d4;
+        /*KEYFRAME*/
+        @keyframes fade-down{
+                    0% {
+                        opacity: 0;
+                        transform: translateY(-30px) scale(0.9);
+                    }
+
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0px) scale(1);
+                    }
+                }
+                @keyframes fade-up{
+                    0% {
+                        opacity: 0;
+                        transform: translateY(-30px) scale(0.9);
+                    }
+
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0px) scale(1);
+                    }
+                }
+        /*BUTTONS*/
+        .buttons{
+            animation: fade-up 2.5s;
+        }
+        #start{
+            position: relative;
+            width: 40lh;
+            transition: 0.2s ease-in;
+            margin-bottom: -140px;
+        }
+        #start:hover{
+            position: relative;
+            width: 44lh;
+        }
+        #contact{
+            position: relative;
+            bottom: -60px;
+            transition: 0.2s ease-in;
+            width: 40lh;
+        }
+        #contact:hover{
+            position: relative;
+            width: 45lh;
         }
     </style>
     
 </head>
 <body>
-    <div class="start_menu">
-        <h1>A! Pataas</h1>
-            <a href="index1.html">
-                <button class="dropbtn">Start</button>
-            </a>
-    </div>
-
-    
-
+    <div class="logo" onclick="window.location.href='index.html'">
+        <img id ="title" src="https://github.com/neohandsome/gittest/blob/img/A%20PATAAS%20TEXT1%20FINAL.png?raw=true"><br>
+        </div>
+            <div class="buttons">
+                <a href="index1.html">
+                    <img id ="start" src ="https://github.com/neohandsome/gittest/blob/img/A%20PATAAS%20START.png?raw=true"><br>
+                    
+                </a>
+                    <a href="cerezi.html">
+                        <img id ="contact" src ="https://github.com/neohandsome/gittest/blob/img/CONTACT%20BUTTON.png?raw=true">
+                    </a>
+            </div>
+        <script>
+          
+        </script>
 </body>
 </html>
