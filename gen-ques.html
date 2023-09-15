@@ -7,13 +7,15 @@
     <meta http-equiv="Cache-control" content="public">
     <meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A! Pataas</title>
+    <title>Easy | General Questions</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
     <link rel="icon" type="image/x-icon" href="https://github.com/neohandsome/gittest/blob/img/logo.png?raw=true">
     <style>
         
         body {
             text-align: center;
+            font-family: "VT323", monospace;
             background: url("https://github.com/neohandsome/gittest/blob/img/ezgif.com-optimize.gif?raw=true") no-repeat;
             background-size: cover;
             background-repeat: no-repeat;
@@ -26,13 +28,13 @@
             justify-content: center;
         }
         .quiz-box {
-            display: none;
+            color: #fff;
             position: absolute;
             left: 50%;
             top: 60%;
             transform: translate(-50%, -50%);
             width: 550px;
-            background: #fff;
+            background: #27355e;
             border-radius: 5px;
         }
         .quiz-box header {
@@ -40,12 +42,12 @@
             z-index: 99;
             height: 70px;
             padding: 0 30px;
-            background-color: #fff;
+            background-color: #27355e;
             display: flex;
             align-items: center;
             justify-content: space-between;
             border-radius: 5px 5px 0 0;
-            box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+            box-shadow: 0px 15px 10px 1px rgba(0,0,0,0.1);
         }
         .quiz-box header .quiz-title {
              font-size: 20px;
@@ -53,6 +55,52 @@
 
         }
         .quiz-box header .timer {
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 145px;
+            height: 45px;
+            background: #cce5ff;
+            border: 1px solid #b8daff;
+            border-radius: 5px;
+            padding: 0 8px;
+        }
+
+        .quiz-box header .timer .time-text {
+            font-weight: 400;
+            font-size: 17px;
+            user-select: none;
+        }
+        .quiz-box {
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            width: 550px;
+            background: #27355e;
+            border-radius: 5px;
+        }
+        .quiz-box header {
+            position: relative;
+            z-index: 99;
+            height: 70px;
+            padding: 0 30px;
+            background-color: #27355e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 5px 5px 0 0;
+            box-shadow: 0px 15px 10px 1px rgba(0,0,0,0.1);
+        }
+        .quiz-box header .quiz-title {
+             font-size: 20px;
+             font-weight: 600;
+
+        }
+        .quiz-box header .timer {
+            color: #000;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -84,7 +132,7 @@
         }
         .quiz-box section {
             padding: 25px 30px 20px 30px ;
-            background: #fff;
+            background: #27355e;
         }
         .quiz-box section .que-text {
             font-size: 25px;
@@ -94,7 +142,9 @@
             padding: 20px 0;
             display: block;
         }
-        section .option-list .option {
+        section .option-list .option  {
+            color: #000;
+            text-align: center;
             background: aliceblue;
             border: 3px solid #84c5fe;
             border-radius: 5px;
@@ -109,16 +159,18 @@
         }
         section .option-list .option:hover {
             color: #004085;
-            background: #cce5ff;
+            background: #b8daff;
+            /* background: #cce5ff; */
             border-color: #b8daff;
 
         }
-        .option-list .option:last-child {
+         .option-list .option:last-child {
             margin-bottom: 0px;
-        }
-        .option-list .option .icon {
-            height: 30px;
-            width: 20px;
+        } 
+        /* Icons */
+        .option-list .option .icon .icon-cross{
+            height: 22px;
+            width: 23px;
             border: 2px solid transparent;
             border-radius: 50%;
             text-align: center;
@@ -126,34 +178,55 @@
             line-height: 24px;
             pointer-events: none;
         }
+        /* Correct Answer */
         .option-list .option .icon.tick {
+            text-align: center;
+            position: relative;
+            left: 5px;
             color: #239023;
             border-color:#23903c;
             background: #d4edda;
         }
+        /* Wrong Answer */
+        .option-list .option .icon-cross {
+            text-align: center;
+            color: #a42834;
+            background: #f8d7da;
+            border-color: #a42834;
+        }
         .quiz-box footer {
-            height: 60px;
+            height: 30px;
             width: 100%;
             padding: 0 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        .quiz-box footer .total-que span {
+        .total-que {
+            position: relative;
+            left: 200px;
+            justify-content: center;
+            bottom: 20px;
+            text-align: center;
+            border: 1px solid green;
+        }
+        .quiz-box footer .total-que input {
             display: flex;
             user-select: none;
         }
         footer .total-que span p {
+            text-align: center;
             font-weight: 500;
             padding: 0 5px;
         }
         .total-que span p:first-child {
             padding-left: 0px;
+            text-align: center;
         }
         footer .next-btn {
             position: relative;
-            right: 9%;
-            bottom: 9%;
+            right: 60px;
+            bottom: 20px;
             height: 40px;
             padding: 0 13px;
             font-size: 18px;
@@ -166,31 +239,29 @@
             border: 1px solid #007bff;
             cursor: pointer;
             transition: 0.3s ease;
-        }
+        } 
         footer .next-btn:hover {
             background: #0263ca;
-        }
-        .result-box {
-            background: #fff;
-            width: ;
-        }
+        } 
     </style> 
 </head>
 <body>
 
+    <!-- Title -->
     <div class="logo" onclick="window.location.href='index.html'">
         <a href="index1.html">
-            <img id ="title" src="https://github.com/neohandsome/gittest/blob/img/A%20PATAAS%20TEXT1.png?raw=true"><br>
+            <img id ="title" src="https://github.com/neohandsome/gittest/blob/img/A%20PATAAS%20TEXT1%20FINAL.png?raw=true"><br>
         </a>    
     </div>
 
-    <!-- Timer -->
+    <!-- Quiz Box -->
     <div class="quiz-box">
         <header>
+            <!-- Timer -->
             <div class="quiz-title">General Questions</div>
             <div class="timer">
                 <div class="time-text">Time Left:</div>
-                <div class="timer-sec">15</div>
+                <div id="timer-sec" class="timer-sec">15</div>
             </div>
         </header>
         <section>
@@ -198,67 +269,88 @@
             <div class="que-text">
                 <span>What is the capital of France?</span>
             </div> 
+            <!-- Choices -->
             <div class="option-list">
-                <div class="option">
-                    <span>Manila</span>
-                    <div class="icon-cross"><i class="fas fa-times"></i></div>
-                </div>
-                <div class="option">
-                    <span>Seoul</span>
-                     <div class="icon-cross "><i class="fab fa-times"></i></div>
-                </div>   
-                <div class="option">
-                    <span>France</span>
-                    <div class="icon tick"><i class="fab fa-check"></i></div>
-                </div>   
-                <div class="option">
-                    <span>Beijing</span>
-                    <div class="icon-cross "><i class="fab fa-times"></i></div>
-                </div>   
+                <label class="option">
+                    <input type="radio" name="answer-choices" value="">Manila
+                    <div class="icon-cross"><!--<i class="fas fa-times">--></i></div>
+                </label>
+                <label class="option">
+                    <input type="radio" name="answer-choices" value="">Seoul
+                     <div class="icon-cross "><!--<i class="fab fa-times">--></i></div>
+                </label>   
+                <label class="option">
+                    <input type="radio" name="answer-choices" value="" onclick="showCheckmark()">
+                    Paris
+                    <div class="icon tick"><i class="fa fa-check"></i></i></div>
+                </label>   
+                <label class="option">
+                    <input type="radio" name="answer-choices" value="">Beijing
+                    <div class="icon-cross "></div>
+                </label>   
             </div>
         </section>
 
         <!-- Quiz box footer -->
         <footer>
             <div class="total-que">
-                <span><p>1</p>of<p>25</p>Questions</span>
+                <!--<span><p>1</p>of<p>25</p>Questions</span>-->
+                <p class="total-que-text">1 of 25 Questions</p>
             </div>
             <button class="next-btn">Next Que</button>
         </footer>
     </div>
 
-    <!-- Result Box -->
-    <div class="result-box">
-        <div class="icon">
-            <i class="fab fa-crown"></i>
-        </div>
-        <div class="complete-text">You've completed the Quiz!</div>
-        <div class="score-text">
-            <span>and sorry, You got only <p>2</p> out of <p>25</p></span>
-        </div>
-        <div class="button">
-            <button class="restart">Replay Quiz</button>
-            <button class="quit">Replay Quiz</button>
-        </div>
-    </div>
-
     <script>
-        var choices = {
-            "question": "What is the capital of France?",
-            "answers": ["a. Manila", "b. Seoul", "c. Paris", "d. Beijing"],
-            "correct": "c"
-        };
+        /*
+        // Timer set
+        let timeLeft = 15;
+        const timerSec = document.getElementById("timer-sec");
 
-        var question = 0;
 
-        function handleAnswer(answer) {
-            if (answer === choices.correct) {
-                question++;
-            }
-            if (questoin < choices.length) {
-                showQuestion(question);
+    
+        // Update timer every second
+        function updateTimer() {
+            if (timeLeft > 0) {
+                timeLeft--; // Corrected variable name here
+                timerSec.textContent = timeLeft; // Corrected variable name here
+            } else {
+                // Timer reached 0
+                alert("You ran out of time!");
+                // Add more logic here to prevent the user from doing anything
             }
         }
+    
+        // Call updateTimer function every second
+        const timerInterval = setInterval(updateTimer, 1000);
+        */
+       
+        // Function to check answer
+        function checkAnswer() {
+            const selectedAnswer = document.querySelector('input[name="answer-choices"]:checked');
+            if (selectedAnswer) {
+                const selectedValue = selectedAnswer.value;
+                if (selectedValue === "Paris") {
+                    window.location.href = "gen-ques2.html"
+                } else {
+                    alert("Sorry, that's incorrect!")
+                }
+            } else {
+                alert("Please select an answer.")
+            }
+        }
+
+        // Automatically check the answer
+        const radioButtons = document.querySelectorAll('input[name="answer-choices"]');
+        radioButtons.forEach(function(radioButtons) {
+            radioButton.addEventListener('click', function() {
+                checkAnswer();
+            })
+        })
+
+        // Anlala lahat na di gumana
     </script>
+    
+
 </body>
 </html>
