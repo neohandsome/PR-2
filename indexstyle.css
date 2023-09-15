@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ /*KEYFRAME*/
+ @keyframes fade-down{
+     0% {
+         opacity: 0;
+         transform: translateY(-30px) scale(0.9);
+     }
+
+     100% {
+         opacity: 1;
+         transform: translateY(0px) scale(1);
+     }
+ }
+ @keyframes fade-up{
+     0% {
+         opacity: 0;
+         transform: translateY(-30px) scale(0.9);
+     }
+
+     100% {
+         opacity: 1;
+         transform: translateY(0px) scale(1);
+     }
+ }
+ /*INTERFACE*/
+
+ #logo {
+     width: 100px;
+     animation: fade-down 0.5s;  
+     position: absolute;
+ }
+section {
+ height: 70vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;  
+}
+.first {
+ background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+ url("https://github.com/neohandsome/gittest/blob/img/ezgif.com-optimize.gif?raw=true"), #203c56;
+ background-repeat: no-repeat;                  
+ background-size: 100% 100%;     
+}
+.first img{
+ width: 50%;
+}
+.sec {
+ background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), #0d2b45;
+}
+/*CATEGORY*/
+.box{
+ margin-left: auto;
+ margin-right: auto;
+ text-align: center;
+ width: 30%;
+ height: 30%;
+ font-size: 50px;
+ background-color: #153552;
+ padding: 0px;
+ border: 0px solid;
+ position: absolute;
+ top: 55%;
+ left: 5lh;
+ font-family: 'VT323', monospace;
+ color: white;
+ box-shadow: 0px 10px 20px 5px #000;
+ border-radius: 5px 5px 5px 5px;
+}
+@media only screen and (max-width: 480px){
+ .box {
+ width: 50%;
+ height: 30%;
+ }
+}
+ a {
+     text-decoration: none;
+     text-decoration-color: none;
+ }
